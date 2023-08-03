@@ -14,7 +14,7 @@ OPENCV_LDFLAGS = $(shell pkg-config opencv4 --libs-only-L)
 OPENCV_LIBS = $(shell pkg-config opencv4 --libs-only-l) $(shell pkg-config opencv4 --libs-only-other)
 
 # CFLAGS= -O3 -Wall -DCPU_BASELINE=NEON
-CFLAGS= -Wall -DCPU_BASELINE=NEON
+CFLAGS=
 CXXFLAGS=$(CFLAGS) $(OPENCV_CPPFLAGS) -std=c++11
 LDFLAGS=$(CFLAGS) $(OPENCV_LDFLAGS)
 
