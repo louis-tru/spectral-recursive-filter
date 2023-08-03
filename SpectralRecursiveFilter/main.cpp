@@ -21,7 +21,7 @@
 
 
 //Please set all the switches false when evaluating the calc time.
-const bool sw_show_output=true;
+const bool sw_show_output=false;
 const bool sw_save_output=true;
 
 template <typename T>
