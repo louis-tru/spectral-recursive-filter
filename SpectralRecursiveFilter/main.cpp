@@ -21,8 +21,8 @@
 
 
 //Please set all the switches false when evaluating the calc time.
-const bool sw_show_output=false;
-const bool sw_save_output=false;
+const bool sw_show_output=true;
+const bool sw_save_output=true;
 
 template <typename T>
 double calc_snr(const cv::Mat& image1,const cv::Mat& image2,double maxval=255.0)
