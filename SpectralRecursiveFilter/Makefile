@@ -4,7 +4,7 @@
 -include config$(CONFIG).mk
 
 CXX			?=	$(CROSS)g++
-LD			?=	$(CXX)
+LINK		?=	$(CXX)
 
 # but here's a reasonable default value
 # add -ftree-vectorizer-verbose=3 to get information about vectorized loops
@@ -39,7 +39,7 @@ LIBS = $(OPENCV_LIBS)
 
 # link command for each program
 srf: $(OBJS)
-	$(LD) -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(LINK) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 .SUFFIXES: .o .cpp
 
