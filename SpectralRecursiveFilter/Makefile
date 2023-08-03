@@ -29,25 +29,17 @@ PROGRAMS = srf
 all: $(PROGRAMS)
 
 # for each program, give list of sources and required libs
-srf_SOURCES_CPP = \
-	main.cpp
-srf_HEADERS = \
+HEADERS = \
 	convolution.hpp \
 	spectral_recursive_filter.hpp
-srf_OBJS = $(srf_SOURCES_CPP:.cpp=.o)
-srf_LIBS = $(OPENCV_LIBS)
-
-
-# all sources and headers
-SRCS_CPP = \
-	$(srf_SOURCES_CPP)
-
-HEADERS = \
-	$(srf_HEADERS)
+SOURCES = \
+	main.cpp
+OBJS = $(SOURCES:.cpp=.o)
+LIBS = $(OPENCV_LIBS)
 
 # link command for each program
-srf: $(srf_OBJS)
-	$(LD) -o $@ $^ $(LDFLAGS) $(srf_LIBS)
+srf: $(OBJS)
+	$(LD) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 .SUFFIXES: .o .cpp
 
@@ -76,9 +68,9 @@ clean:
 	-rm -rf *.dSYM
 
 distclean: clean
-	-rm -f $(SRCS_CPP:.cpp=.P)
+	-rm -f $(SOURCES:.cpp=.P)
 
 count:
-	 wc -l $(SRCS_CPP) $(HEADERS)
+	wc -l $(SOURCES) $(HEADERS)
 
--include $(SRCS_CPP:.cpp=.P)
+-include $(SOURCES:.cpp=.P)
