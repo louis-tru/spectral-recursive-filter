@@ -5,7 +5,6 @@
 
 CXX			?=	$(CROSS)g++
 LD			?=	$(CXX)
-LIBTOOL ?= libtool
 
 # but here's a reasonable default value
 # add -ftree-vectorizer-verbose=3 to get information about vectorized loops
@@ -47,8 +46,8 @@ HEADERS = \
 	$(srf_HEADERS)
 
 # link command for each program
-srf: $(srf_OBJS) $(LIBRARY)
-	$(LD) -o $@ $^ $(LDFLAGS) $(srf_LIBS) $(LDADD)
+srf: $(srf_OBJS)
+	$(LD) -o $@ $^ $(LDFLAGS) $(srf_LIBS)
 
 .SUFFIXES: .o .cpp
 
