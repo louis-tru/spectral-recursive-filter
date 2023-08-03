@@ -11,3 +11,5 @@ Release
 
 SpectralRecursiveFilter/Debug
 SpectralRecursiveFilter/Release
+
+*.d

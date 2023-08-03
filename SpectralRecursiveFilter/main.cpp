@@ -1,3 +1,11 @@
+
+// typedef int __v4si __attribute__((__vector_size__(16)));
+// typedef float __v4sf __attribute__((__vector_size__(16)));
+// typedef float __m128 __attribute__((__vector_size__(16), __aligned__(16)));
+// typedef float __m128_u __attribute__((__vector_size__(16), __aligned__(1)));
+// /* Unsigned types */
+// typedef unsigned int __v4su __attribute__((__vector_size__(16)));
+
 #include <iostream>
 #include <string>
 #include <vector>
